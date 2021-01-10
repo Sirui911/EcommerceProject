@@ -1,0 +1,5 @@
+package com.coseller.domain.security;
+
+public class PasswordResetToken {
+
+}

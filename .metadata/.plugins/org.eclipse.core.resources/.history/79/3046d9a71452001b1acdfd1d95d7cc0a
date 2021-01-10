@@ -1,0 +1,16 @@
+package com.coseller.service;
+
+import com.coseller.domain.User;
+import com.coseller.domain.security.PasswordResetToken;
+
+public interface UserService {
+    
+	PasswordResetToken getPasswordResetToken(final String token);
+	
+	void createPasswordResetTokenForUser(final User user, final String token);
+	
+	//to check if there is exsited username and email
+	User findBuUsername (String username);
+	
+	User findByEmail (String email);
+}

@@ -1,0 +1,5 @@
+package com.coseller.repository;
+
+public interface PasswordResetTokenRepository {
+
+}

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<!-- ::表示我们要在header这个file里面寻找common-header这部分，而且这里的common没有/说明是在一个folder下的 -->
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<!-- <div class="page-top" style="width:100%; height:20px; background-color:#f46b42;"></div> -->
+	<!-- Static navbar -->
+
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="col-xs-10">
+				<h2 class="section-headline">
+					<span><h4 class="section-headline">
+							<span th:text="${#string.toUpperCase{user.username}}"></span>
+						</h4></span>
+				</h2>
+			</div>
+			<div class="col-xs-2">
+				<img src="image/logo.jpeg" style="width: 150px;" />
+			</div>
+		</div>
+		<!-- z-index是为了控制图层的，z-index越大，图层越考上 -->
+		<hr
+			style="width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: 20px;" />
+		<!-- 
+		<img src="image/candy.png" class="img-responsive" style="margin-top:25px;" /> -->
+
+		<div class="row" style="margin-top: 30px">
+			<div class="col-xs-9 col-xs-offset-3">
+
+				<!-- navbar-tab -->
+				<ul class="nav nav-tabs">
+					<li th:classappend="${classActiveEdit}? 'active'"><a
+						href="#tab-1" data-toggle="tab"><span>Edit</span></a></li>
+					<li th:classappend="${classActiveOrder}? 'active'"><a
+						href="#tab-2" data-toggle="tab"><span>Order</span></a></li>
+					<li th:classappend="${classActiveBilling}? 'active'"><a
+						href="#tab-3" data-toggle="tab"><span>Billing </span></a></li>
+					<li th:classappend="${classActiveShipping}? 'active'"><a
+						href="#tab-4" data-toggle="tab"><span>Shipping </span></a></li>
+				</ul>
+
+				<!-- tab content -->
+				<!-- Tab panels -->
+				<div class="tab-content">
+
+					<!-- Edit user info -->
+					<div class="tab-pane" id="tab-1"${classActiveEdit}? 'inactive">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+									<div class="alert alert-info">An email has been sent to
+										the email address you just registered. Please validate your
+										email address and update your password information.</div>
+									<form th:action="@{updateUserInfo}" method="POST">
+										<input type="hidden" name="id" th:value="${user.id}" />
+										<div class="bg-info"th:if"${uodateUserInfo}">User
+											Information updated.</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-xs-6">
+													<label for="firstName">First name</label> <input
+														type="text" class="form-control" id="firstName"
+														name="firstName" th:value="${user.firstname}" />
+												</div>
+
+												<div class="col-xs-6">
+													<label for="lasttName">Last name</label> <input type="text"
+														class="form-control" id="lasttName" name="lastName"
+														th:value="${user.lastname}" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="userName">Username</label> <input type="text"
+												class="form-control" id="userName" name="userName"
+												th:value="${user.userName}" />
+										</div>
+
+										<div class="form-group">
+											<label for="currentPassword">Current Password</label> <input
+												type="text" class="form-control" id="currentPassword"
+												name="currentPassword" th:value="${currentPassword}" />
+										</div>
+										<p style="color: #828282">Enter your current password to
+											change the eamil address or password</p>
+
+										<div class="form-group">
+											<label for="email">* Email Address</label> <input type="text"
+												class="form-control" id="email" name="email"
+												th:value="${user.email}" />
+										</div>
+										<p style="color:"#828282">A valid email address. All
+											emails from the system withll be sent to this address. The
+											email address is not made public and will only be used if you
+											wish to receive a new password or wish to receive certain
+											notification.</p>
+
+										<div class="form-group">
+											<label for="txtNewpassword">Password</label> <input
+												type="password" class="form-control" id="txtNewpassword"
+												name="newPassword" th:value="${user.email}" />
+										</div>
+
+										<div class="form-group">
+											<label for="txtConfirmpassword">Password</label> <input
+												type="password" class="form-control" id="txtConfirmpassword" />
+										</div>
+										<p style="color:"#828282">To change the current user password, enter the new password for both fields</p>
+
+
+
+
+
+
+
+										<button type="submit" class="btn btn-primary">Create
+											new account</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- log in -->
+					<div class="tab-pane" id="tab-2"
+						th:classappend="${classActiveLogin}? 'in active'">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+									<div style="color: red;">Incorrect username or password.</div>
+									<form>
+										<div class="form-group">
+											<label for="username">* Username: </label> <input
+												required="required" type="text" class="form-control"
+												id="username" name="username" />
+											<p style="color: #828282">Enter your username here.</p>
+										</div>
+
+										<div class="form-group">
+											<label for="password">* Password: </label> <input
+												required="required" type="password" class="form-control"
+												id="password" name="password" />
+											<p style="color: #828282">Enter the password that
+												accompanies your username</p>
+										</div>
+
+										<button type="submit" class="btn btn-primary">Log in</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- forget password -->
+					<div class="tab-pane" id="tab-3"
+						th:classappend="${classActiveForgetPassword}? 'in active'">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+									<div>Email doesn't exist.</div>
+									<div class="alert alert-success">Email sent.</div>
+									<form>
+										<div class="form-group">
+											<!-- 我们在这里的email使用相同的field，share这个field in the backend -->
+											<label for="recoverEmail">* Your Email: </label> <input
+												required="required" type="text" class="form-control"
+												id="recoverEmail" name="email" />
+											<p style="color: #828282">Enter your registered email
+												address here.</p>
+										</div>
+
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+	<!-- end of the container -->
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<!-- ::表示我们要在header这个file里面寻找common-header这部分，而且这里的common没有/说明是在一个folder下的 -->
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<!-- <div class="page-top" style="width:100%; height:20px; background-color:#f46b42;"></div> -->
+	<!-- Static navbar -->
+
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8">
+				<!-- add a carousel -->
+				<div class="panel panel-default">
+					<div class="panel-heading">Panel heading without title</div>
+					<div class="panel-body">
+
+						<div id="carousel-example-generic" class="carousel slide"
+							data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0"
+									class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img
+										src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2852&q=80"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>Make things valuable again!</h4>
+										<p>Additionally, if your control element is targeting a
+											single collapsible element – i.e. the data-target attribute
+											is pointing to an id selector – you may add an additional
+											aria-controls attribute to the control element, containing
+											the id of the collapsible element.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>Make things valuable again!</h4>
+										<p>Additionally, if your control element is targeting a
+											single collapsible element – i.e. the data-target attribute
+											is pointing to an id selector – you may add an additional
+											aria-controls attribute to the control element, containing
+											the id of the collapsible element.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>Make things valuable again!</h4>
+										<p>Additionally, if your control element is targeting a
+											single collapsible element – i.e. the data-target attribute
+											is pointing to an id selector – you may add an additional
+											aria-controls attribute to the control element, containing
+											the id of the collapsible element.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>Make things valuable again!</h4>
+										<p>Additionally, if your control element is targeting a
+											single collapsible element – i.e. the data-target attribute
+											is pointing to an id selector – you may add an additional
+											aria-controls attribute to the control element, containing
+											the id of the collapsible element.</p>
+									</div>
+								</div>
+								...
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic"
+								role="button" data-slide="prev"> <span
+								class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a> <a class="right carousel-control"
+								href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"
+								aria-hidden="true"></span> <span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-4" style="padding: 50px;">
+				<img src="/image/logo.jpeg" class="img-responsive" />
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel panel-body">
+						<img src="/image/bestseller.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel panel-body">
+						<img src="/image/faq.jpg" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+			<div iv class="col-xs-4">
+			   <div class="panel panel-default">
+				    <div class="panel panel-body">
+					    <img src="image/hours.png" class="img-responsive" />
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+	<div>
+		<div class="home-headline">
+			<span>Good Used Things</span>
+		</div>
+		<hr style="margin-top: -15px;" />
+	</div>
+
+	<div class="row">
+		<div id="good-used-things" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#cgood-used-things" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#good-used-things" data-slide-to="1"></li>
+				<li data-target="#good-used-things " data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="row">
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings1.jpg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="row">
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings2.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="row">
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+						<div class="col-xs-2">
+							<img class="img-responsive" src="/image/goodthings3.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#good-used-things"
+				role="button" data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#good-used-things"
+				role="button" data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+	</div>
+	<!-- end of the container -->
+	<div th:replace="common/header :: body-bottom-scripts" />
+	<!--  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+		crossorigin="anonymous"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	-->
+</body>
+</html>

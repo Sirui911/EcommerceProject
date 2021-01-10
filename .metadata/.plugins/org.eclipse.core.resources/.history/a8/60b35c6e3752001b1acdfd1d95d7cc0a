@@ -1,0 +1,5 @@
+package com.coseller.utility;
+
+public class MailConstructor {
+
+}

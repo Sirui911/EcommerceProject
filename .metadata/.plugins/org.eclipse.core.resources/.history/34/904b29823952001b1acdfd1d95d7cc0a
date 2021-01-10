@@ -1,0 +1,26 @@
+package com.coseller;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.coseller.domain.User;
+import com.coseller.utility.SecurityUtility;
+
+@SpringBootApplication
+public class CosellerApplication implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(CosellerApplication.class, args);
+	}
+	
+	@Override
+	public void run(String... args) throws Exception{
+		User user1 = new User();
+		user1.setFirstname("John");
+		user1.setLastname("Adams");
+		user1.setUsername("j");
+		user1.setPassword(SecurityUtility.passwordEncoder().encode("p"));
+	}
+
+}
