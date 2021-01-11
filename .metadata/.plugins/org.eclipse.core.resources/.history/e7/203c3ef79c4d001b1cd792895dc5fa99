@@ -1,5 +1,0 @@
-package com.coseller.service.impl;
-
-public interface UserServiceImpl {
-
-}
