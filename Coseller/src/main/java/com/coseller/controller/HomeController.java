@@ -1,11 +1,15 @@
 package com.coseller.controller;
 
+import java.security.Principal;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -21,10 +25,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.coseller.domain.Product;
 import com.coseller.domain.User;
 import com.coseller.domain.security.PasswordResetToken;
 import com.coseller.domain.security.Role;
 import com.coseller.domain.security.UserRole;
+import com.coseller.service.ProductService;
 import com.coseller.service.UserService;
 import com.coseller.service.impl.UserSecurityService;
 import com.coseller.utility.MailConstructor;
@@ -33,6 +39,8 @@ import com.coseller.utility.SecurityUtility;
 @Controller
 public class HomeController {
 	
+	@Autowired
+	private ProductService productService;
 	@Autowired
 	private JavaMailSender mailSender;
 	
@@ -60,6 +68,38 @@ public class HomeController {
 		model.addAttribute("classActiveLogin", true);
 		return "myAccount";
 	}
+	
+	@RequestMapping("/productShelf")
+	public String productShelf(Model model) {
+		List<Product> productList = productService.findAll();
+		model.addAttribute("productList", productList);
+		
+		return "productShelf";
+	}
+	
+	@RequestMapping("/productDetail")
+	public String productDetail(
+			@PathParam("id") Long id, Model model, Principal principal
+			) {
+		if (principal != null) {
+			String username = principal.getName();
+			User user = userService.findByUsername(username);
+			model.addAttribute("user", user);
+		}
+		
+		Product product = productService.findOne(id);
+		
+		model.addAttribute("product",product);
+		
+		List<Integer> qtyList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		
+		model.addAttribute("qtyList", qtyList);
+		model.addAttribute("qty", 1);
+		
+		return "productDetail";
+		
+	}
+	
 	
 	@RequestMapping("/forgetPassword")
 	public String forgetPassword(

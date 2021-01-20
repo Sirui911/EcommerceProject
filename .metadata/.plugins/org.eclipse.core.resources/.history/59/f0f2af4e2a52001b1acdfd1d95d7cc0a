@@ -1,5 +1,0 @@
-package com.coseller.repository;
-
-public interface RoleRepository {
-
-}
