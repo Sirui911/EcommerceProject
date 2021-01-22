@@ -10,13 +10,19 @@
 
 <!-- Bootstrap core CSS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet" /> 
-<link href="css/non-responsive.css" rel="stylesheet" />
-
+<!-- 这里必须要有/，没有会提示MIME type不支持 -->
+<link href="/css/bootstrap.min.css" rel="stylesheet" /> 
+<link href="/css/non-responsive.css" rel="stylesheet" />
 
 <!-- Custom styles for this template -->
 <link href="/css/style.css" rel="stylesheet" />
-<link rel="icon" href="/image/WechatIMG799.jpeg" />
+<link rel="icon" href="/image/logo.jpeg" />
+
+<!-- data table -->
+<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
 
 </head>
 
@@ -50,7 +56,7 @@
 						</form>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">SHOPPING CART</a></li>
+						<li><a th:href="@{/shoppingCart/cart}">SHOPPING CART</a></li>
 						<li><a sec:authorize="isAnonymous()" th:href="@{/login}">Login</a></li>
 						<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY ACCOUNT</a></li>
 						<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>

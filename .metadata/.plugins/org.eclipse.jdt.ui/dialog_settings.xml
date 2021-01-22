@@ -83,4 +83,11 @@
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="3"/>
 	</section>
+	<section name="DialogBounds_AddDelegateMethodsDialog">
+		<item key="DIALOG_X_ORIGIN" value="444"/>
+		<item key="DIALOG_Y_ORIGIN" value="125"/>
+		<item key="DIALOG_WIDTH" value="553"/>
+		<item key="DIALOG_HEIGHT" value="488"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
 </section>

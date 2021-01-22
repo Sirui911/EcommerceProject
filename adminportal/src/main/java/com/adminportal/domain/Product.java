@@ -1,13 +1,18 @@
 package com.adminportal.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product {
@@ -23,6 +28,10 @@ public class Product {
     private double boughtPrice;
     private double sellPrice;
     private boolean active=true;
+    
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    private List<ProductToCartItem> productToItem;
     
     @Column(columnDefinition="text") 
     private String description;
@@ -128,6 +137,14 @@ public class Product {
 
 	public void setProductImage(MultipartFile productImage) {
 		this.productImage = productImage;
+	}
+
+	public List<ProductToCartItem> getProductToItem() {
+		return productToItem;
+	}
+
+	public void setProductToItem(List<ProductToCartItem> productToItem) {
+		this.productToItem = productToItem;
 	}
     
     

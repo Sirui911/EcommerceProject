@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
 <!-- ::表示我们要在header这个file里面寻找common-header这部分，而且这里的common没有/说明是在一个folder下的 -->
-<head th:replace="common/header :: common-header" />
+<head th:replace="common/header :: common-header"></head>
 
 <body>
 	<!-- <div class="page-top" style="width:100%; height:20px; background-color:#f46b42;"></div> -->
 	<!-- Static navbar -->
 
-	<div th:replace="common/header :: navbar" />
+	<div th:replace="common/header :: navbar"></div>
 
 	<div class="container">
 		<div class="row" style="margin-bottom: -100px;">
@@ -120,7 +120,7 @@
 
 	</div>
 	<!-- end of the container -->
-	<div th:replace="common/header :: body-bottom-scripts" />
+	<div th:replace="common/header :: body-bottom-scripts"></div>
 
 
 </body>

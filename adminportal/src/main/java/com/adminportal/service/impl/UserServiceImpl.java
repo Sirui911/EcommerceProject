@@ -1,5 +1,6 @@
 package com.adminportal.service.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -49,6 +50,6 @@ private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 	public User save(User user) {
 		return userRepository.save(user);
 	}
-
+	
 }
  
