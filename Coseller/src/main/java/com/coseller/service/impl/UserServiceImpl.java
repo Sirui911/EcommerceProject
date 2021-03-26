@@ -105,7 +105,6 @@ public class UserServiceImpl implements UserService{
     
     @Override
     public void updateUserShipping(UserShipping userShipping, User user) {
-    	//为什么这个里面不需要用userShipping 去save改变后的userShipping
     	userShipping.setUser(user);
     	userShipping.setUserShippingDefault(true);
     	user.getUserShippingList().add(userShipping);
