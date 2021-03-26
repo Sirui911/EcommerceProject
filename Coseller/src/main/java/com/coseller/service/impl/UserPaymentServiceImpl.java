@@ -15,9 +15,9 @@ public class UserPaymentServiceImpl implements UserPaymentService{
 	
 	
 	@Override
-    public UserPayment findById(Long id) {
-    	return userPaymentRepository.findById(id).get();
-    }
+        public UserPayment findById(Long id) {
+    	    return userPaymentRepository.findById(id).get();
+        }
 	
 	@Override
 	public void removeById(Long id) {
