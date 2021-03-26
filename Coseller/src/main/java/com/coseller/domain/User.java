@@ -26,12 +26,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User implements UserDetails{
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	//id在database中不可以为空也不可以update
-	@Column(name="id", nullable=false, updatable=false)
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    //id在database中不可以为空也不可以update
+    @Column(name="id", nullable=false, updatable=false)
     private Long id;
-	private String username;
+    private String username;
     private String password;
     private String firstname;
     private String lastname;
